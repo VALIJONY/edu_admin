@@ -87,7 +87,7 @@ class UquvchiKurslariView(LoginRequiredMixin,View):
             except:
                 pass
 
-        return render(request, 'admin_services/uquvchi_kurslari.html', {'kurslar': kurslar})
+        return render(request, 'admin_services/uquvchi_kurslari.html', {'kurslar': kurslar,'name':name})
 
 class NewGroupView(LoginRequiredMixin,View):
     def get(self,request):
