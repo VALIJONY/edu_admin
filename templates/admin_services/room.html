@@ -1,0 +1,64 @@
+{%extends 'admin.html'%}
+{%block content%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Комнатный монитор</title>
+    <style>
+      table,thead,tbody,td,tr,th{
+        border: 1px solid yellow;
+        text-align: center;
+        font-size: 20px;
+        width: 1300px;
+        height: 60px;
+        background-color: rgb(52, 52, 52);
+      }
+      h6{
+        text-align: center; 
+        display: inline;
+        color: white;
+        font-size: 30px;
+      }
+      h1{
+        color: white;
+      }
+      td, th {
+        color: white;
+      }
+    </style>
+</head>
+<body>
+    <h1 class="container">Комнатный монитор</h1>
+
+    <div class="container " style="margin-top: 80px;">
+      <table>
+        <tr>
+          <th style="font-size: 30px;">Дни\Часы</th>
+          {% for i in soatlar %}
+          <th style="font-size: 25px;"> {{ i.vaqt_start }} - {{ i.vaqt_end }} </th>
+          {% endfor %}
+        </tr>
+        {% for i in hafta %}
+        <tr>
+          
+          <th style="font-size: 25px;">{{ i.nomi }}</th>
+
+          {% for k in malumot %}
+            {% for j in k.hafta_kuni%}
+              {% if i.nomi == j.kun %}
+                {% if j.guruh %}
+                  <td style="font-size: 35px;">{{j.guruh}}</td>
+                {% else %}
+                  <td></td>
+                {% endif %}
+              {% endif %} 
+            {% endfor %}
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+{%endblock%}
+</body>
+</html>

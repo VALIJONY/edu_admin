@@ -1,0 +1,59 @@
+{%extends 'admin.html'%}
+{%load static%}
+{%block content%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Формирование группы</title>
+    <style>
+        
+form {
+    max-width: 400px; 
+    margin: auto; 
+    padding: 20px; 
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+}
+
+
+label {
+  display: block; 
+  margin-bottom: 5px; 
+  color: white;
+}
+
+input[type="text"],
+select {
+  width: 100%; 
+  padding: 8px; 
+  margin-bottom: 10px; 
+  box-sizing: border-box; 
+}
+
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white; 
+  padding: 10px 20px; 
+  border: none; 
+  cursor: pointer; 
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049; 
+}
+
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; color: white;">Добавить новую группу</h1>
+
+    <form action="" method="post">
+        {%csrf_token%}
+        {{group.as_p}}
+        <button type="submit">СОХРАНЯТЬ</button>
+    </form>
+{%endblock%}
+</body>
+</html>

@@ -6,15 +6,13 @@
   <title>Login Form</title>
  
   <style>
-    /* Umumiy stil */
     body {
       font-family: Arial, sans-serif;
       background-image: url(../static/images/login-bg.jpg);
-      /* background-repeat: no-repeat; */
       color: white;
     }
 
-    /* Forma maydonlarining joylashuvi */
+    
     form{
       position: relative;
       width: 400px;
@@ -27,7 +25,6 @@
       box-shadow: 0 0 10px rgba(229, 228, 228, 0.1);
     }
 
-    /* Maydonlarga shakl berish */
     input[type="text"],
     input[type="password"] {
       font-size: medium;
@@ -36,10 +33,10 @@
       margin: 5px 0;
       border: 1px solid #ccc;
       border-radius: 4px;
-      box-sizing: border-box; /* Maydonlar hajmi bosib ketsa ham o'lchamini o'zgartiradi */
+      box-sizing: border-box; 
     }
 
-    /* Kirish tugmasining shakli */
+    
     button[type="submit"] {
       width: auto;
       background-color: #1606fa;
@@ -51,7 +48,6 @@
       cursor: pointer;
     }
 
-    /* Kirish tugmasining bosish vaqti */
     button[type="submit"]:hover {
       background-color: #45a049;
     }
@@ -65,10 +61,10 @@
   </style>
 </head>
 <body>
-    <h2>LOG IN</h2>
+    <h2>АВТОРИЗОВАТЬСЯ</h2>
     <form action="" method="post">{%csrf_token%}
         {{form.as_p}}
-        <button type="submit">KIRISH</button>
+        <button type="submit">ВВЕДЕНИЕ</button>
     </form>
 
 

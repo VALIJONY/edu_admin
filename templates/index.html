@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EduHome - Education Is About Academic Excellence</title>
+  <title>EduHome - Образование – это академическое превосходство</title>
 
   <!-- 
     - favicon
@@ -56,27 +56,27 @@
         <ul class="navbar-list">
 
           <li class="navbar-item">
-            <a href="#home" class="navbar-link" data-nav-toggler>Home</a>
+            <a href="#home" class="navbar-link" data-nav-toggler>Главный</a>
           </li>
 
           <li class="navbar-item">
-            <a href="#about" class="navbar-link" data-nav-toggler>About</a>
+            <a href="#about" class="navbar-link" data-nav-toggler>О нас</a>
           </li>
 
           <li class="navbar-item">
-            <a href="#courses" class="navbar-link" data-nav-toggler>Courses</a>
+            <a href="#courses" class="navbar-link" data-nav-toggler>Курсы</a>
           </li>
 
           <li class="navbar-item">
-            <a href="#event" class="navbar-link" data-nav-toggler>Event</a>
+            <a href="#event" class="navbar-link" data-nav-toggler>Событие</a>
           </li>
 
           <li class="navbar-item">
-            <a href="#to_contact" class="navbar-link" data-nav-toggler>Contact</a>
+            <a href="#to_contact" class="navbar-link" data-nav-toggler>Контакт</a>
           </li>
           {% if request.user.is_authenticated %}
           <li>
-            <a href="{% url 'for_admin' %}" class="navbar-link">For admin</a>
+            <a href="{% url 'for_admin' %}" class="navbar-link">Для администратора</a>
           </li>
           {%endif%}
         </ul>
@@ -92,11 +92,11 @@
           <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
           <span class="span">{{request.user.username}}</span>
         </a>
-        <a class="header-action-btn login-btn" href="{%url 'logout'%}">LOGOUT</a>
+        <a class="header-action-btn login-btn" href="{%url 'logout'%}">ВЫЙТИ</a>
         {%else%}
         <a href="{%url 'login' %}" class="header-action-btn login-btn">
           <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
-          <span class="span">LOGIN</span>
+          <span class="span">АВТОРИЗОВАТЬСЯ</span>
         </a>
         {%endif%}
 
@@ -153,16 +153,15 @@
 
           <div class="hero-content">
 
-            <p class="section-subtitle">Better Learning Future With Us</p>
+            <p class="section-subtitle">Лучшее будущее обучения вместе с нами</p>
 
-            <h2 class="h1 hero-title">Education Is About Academic Excellence</h2>
+            <h2 class="h1 hero-title">Образование – это академическое превосходство</h2>
 
             <p class="hero-text">
-              Sed eu volutpat arcu, a tincidunt nulla quam, feugiat sit amet ipsum a, dapibus porta velit.
-            </p>
+              Большое спасибо. Ослепленные временем, как оно и есть, удовольствие, которое вы обязаны времени, любому из наименее справедливых, но трудолюбивых обвинителей, наиболее достойному этих обязанностей, как если бы это произошло в другом месте. </p>
 
             <a href="#" class="btn btn-primary">
-              <span class="span">Get Started Today</span>
+              <span class="span">Начните сегодня</span>
 
               <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
             </a>
@@ -210,9 +209,9 @@
 
           <div class="about-content">
 
-            <p class="section-subtitle">Who We Are</p>
+            <p class="section-subtitle">Кто мы</p>
 
-            <h2 class="h2 section-title">We Offer The Best Carrier</h2>
+            <h2 class="h2 section-title">Мы предлагаем лучшего перевозчика</h2>
 
             <ul class="about-list">
 
@@ -223,11 +222,11 @@
                 </div>
 
                 <div>
-                  <h3 class="h3 item-title">Industry Expert Instructor</h3>
+                  <h3 class="h3 item-title">Инструктор-эксперт отрасли</h3>
 
                   <p class="item-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmoded tempor incididunt dolore magna
-                    aliqua.
+                    Очень важно заботиться о больном, а за больным будет следить пациент.
+                    Аликва
                   </p>
                 </div>
 
@@ -240,11 +239,11 @@
                 </div>
 
                 <div>
-                  <h3 class="h3 item-title">Up-to-Date Course Content</h3>
+                  <h3 class="h3 item-title">Актуальное содержание курса</h3>
 
                   <p class="item-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmoded tempor incididunt dolore magna
-                    aliqua.
+                    Очень важно заботиться о больном, а за больным будет следить пациент.
+                    Аликва
                   </p>
                 </div>
 
@@ -257,11 +256,11 @@
                 </div>
 
                 <div>
-                  <h3 class="h3 item-title">Biggest Student Community</h3>
+                  <h3 class="h3 item-title">Крупнейшее студенческое сообщество</h3>
 
                   <p class="item-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmoded tempor incididunt dolore magna
-                    aliqua.
+                    Очень важно заботиться о больном, а за больным будет следить пациент.
+                    некоторый
                   </p>
                 </div>
 
@@ -270,7 +269,7 @@
             </ul>
 
             <a href="#" class="btn btn-primary">
-              <span class="span">Know About Us</span>
+              <span class="span">Знайте о нас</span>
 
               <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
             </a>
@@ -292,9 +291,9 @@
         style="background-image: url('./static/images/course-bg.jpg')">
         <div class="container">
 
-          <p class="section-subtitle">Popular Courses</p>
+          <p class="section-subtitle">Популярные курсы</p>
 
-          <h2 class="h2 section-title">Our Popular Courses</h2>
+          <h2 class="h2 section-title">Наши популярные курсы</h2>
 
           <ul class="grid-list">
 
@@ -308,7 +307,7 @@
 
                 <div class="card-actions">
 
-                  <span class="badge">Intermediate</span>
+                  <span class="badge">Средний</span>
 
                   <button class="whishlist-btn" aria-label="Add to whishlist" data-whish-btn>
                     <ion-icon name="heart"></ion-icon>
@@ -323,19 +322,19 @@
                     <li class="card-meta-item">
                       <ion-icon name="reader-outline" aria-hidden="true"></ion-icon>
 
-                      <span class="card-meta-text">35 Lessons</span>
+                      <span class="card-meta-text">35 уроков</span>
                     </li>
 
                     <li class="card-meta-item">
                       <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
 
-                      <time datetime="PT18H15M44S" class="card-meta-text">18h 15m 44s</time>
+                      <time datetime="PT18H15M44S" class="card-meta-text">18 ч 15 м 44 с</time>
                     </li>
 
                   </ul>
 
                   <h3 class="h3">
-                    <a href="#" class="card-title">Ingliz tili</a>
+                    <a href="#" class="card-title">Английский язык</a>
                   </h3>
 
                   <div class="rating-wrapper">
@@ -348,22 +347,22 @@
                       <ion-icon name="star"></ion-icon>
                     </div>
 
-                    <span class="rating-text">(18 Review)</span>
+                    <span class="rating-text">(18 обзоров)</span>
 
                   </div>
 
                   <div class="card-footer">
 
                     <div class="card-price">
-                      <span class="span">400 ming sum</span>
+                      <span class="span">400 UZS</span>
 
-                      <del class="del">500 ming sum</del>
+                      <del class="del">500 UZS</del>
                     </div>
 
                     <div class="card-meta-item">
                       <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
 
-                      <span class="card-meta-text">47 Students</span>
+                      <span class="card-meta-text">47 студентов</span>
                     </div>
 
                   </div>
@@ -383,7 +382,7 @@
 
                 <div class="card-actions">
 
-                  <span class="badge">Advanced</span>
+                  <span class="badge">Передовой</span>
 
                   <button class="whishlist-btn" aria-label="Add to whishlist" data-whish-btn>
                     <ion-icon name="heart"></ion-icon>
@@ -398,19 +397,19 @@
                     <li class="card-meta-item">
                       <ion-icon name="reader-outline" aria-hidden="true"></ion-icon>
 
-                      <span class="card-meta-text">48 Lessons</span>
+                      <span class="card-meta-text">48 уроков</span>
                     </li>
 
                     <li class="card-meta-item">
                       <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
 
-                      <time datetime="PT18H15M44S" class="card-meta-text">18h 15m 44s</time>
+                      <time datetime="PT18H15M44S" class="card-meta-text">18 ч 15 м 44 с</time>
                     </li>
 
                   </ul>
 
                   <h3 class="h3">
-                    <a href="#" class="card-title">Dasturlash</a>
+                    <a href="#" class="card-title">Программирование</a>
                   </h3>
 
                   <div class="rating-wrapper">
@@ -423,22 +422,22 @@
                       <ion-icon name="star"></ion-icon>
                     </div>
 
-                    <span class="rating-text">(18 Review)</span>
+                    <span class="rating-text">(18 обзоров)</span>
 
                   </div>
 
                   <div class="card-footer">
 
                     <div class="card-price">
-                      <span class="span">300 ming sum</span>
+                      <span class="span">300 UZS</span>
 
-                      <del class="del">400 ming sum</del>
+                      <del class="del">400 UZS</del>
                     </div>
 
                     <div class="card-meta-item">
                       <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
 
-                      <span class="card-meta-text">65 Students</span>
+                      <span class="card-meta-text">65 студентов</span>
                     </div>
 
                   </div>
@@ -458,7 +457,7 @@
 
                 <div class="card-actions">
 
-                  <span class="badge">Basic</span>
+                  <span class="badge">Базовый</span>
 
                   <button class="whishlist-btn" aria-label="Add to whishlist" data-whish-btn>
                     <ion-icon name="heart"></ion-icon>
@@ -473,19 +472,19 @@
                     <li class="card-meta-item">
                       <ion-icon name="reader-outline" aria-hidden="true"></ion-icon>
 
-                      <span class="card-meta-text">80 Lessons</span>
+                      <span class="card-meta-text">80 уроков</span>
                     </li>
 
                     <li class="card-meta-item">
                       <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
 
-                      <time datetime="PT18H15M44S" class="card-meta-text">18h 15m 44s</time>
+                      <time datetime="PT18H15M44S" class="card-meta-text">18ч 15м 44с</time>
                     </li>
 
                   </ul>
 
                   <h3 class="h3">
-                    <a href="#" class="card-title">Rus tili</a>
+                    <a href="#" class="card-title">Русский язык</a>
                   </h3>
 
                   <div class="rating-wrapper">
@@ -498,21 +497,21 @@
                       <ion-icon name="star"></ion-icon>
                     </div>
 
-                    <span class="rating-text">(18 Review)</span>
+                    <span class="rating-text">(18 обзоров)</span>
 
                   </div>
 
                   <div class="card-footer">
 
                     <div class="card-price">
-                      <span class="span">400 ming sum</span>
+                      <span class="span">400 UZS</span>
 
-                      <del class="del">500 ming sum</del>
+                      <del class="del">500 UZS</del>
                     </div>
                     <div class="card-meta-item">
                       <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
 
-                      <span class="card-meta-text">42 Students</span>
+                      <span class="card-meta-text">42 студента</span>
                     </div>
 
                   </div>
@@ -532,7 +531,7 @@
 
                 <div class="card-actions">
 
-                  <span class="badge">Intermediate</span>
+                  <span class="badge">Средний</span>
 
                   <button class="whishlist-btn" aria-label="Add to whishlist" data-whish-btn>
                     <ion-icon name="heart"></ion-icon>
@@ -547,19 +546,19 @@
                     <li class="card-meta-item">
                       <ion-icon name="reader-outline" aria-hidden="true"></ion-icon>
 
-                      <span class="card-meta-text">31 Lessons</span>
+                      <span class="card-meta-text">31 урок</span>
                     </li>
 
                     <li class="card-meta-item">
                       <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
 
-                      <time datetime="PT18H15M44S" class="card-meta-text">18h 15m 44s</time>
+                      <time datetime="PT18H15M44S" class="card-meta-text">18ч 15м 44с</time>
                     </li>
 
                   </ul>
 
                   <h3 class="h3">
-                    <a href="#" class="card-title">Matematika</a>
+                    <a href="#" class="card-title">Математика</a>
                   </h3>
 
                   <div class="rating-wrapper">
@@ -572,22 +571,22 @@
                       <ion-icon name="star"></ion-icon>
                     </div>
 
-                    <span class="rating-text">(18 Review)</span>
+                    <span class="rating-text">(18 обзоров)</span>
 
                   </div>
 
                   <div class="card-footer">
 
                     <div class="card-price">
-                      <span class="span">250 ming sum</span>
+                      <span class="span">250 UZS</span>
 
-                      <del class="del">350 ming sum</del>
+                      <del class="del">350 UZS</del>
                     </div>
 
                     <div class="card-meta-item">
                       <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
 
-                      <span class="card-meta-text">46 Students</span>
+                      <span class="card-meta-text">46 студентов</span>
                     </div>
 
                   </div>
@@ -607,7 +606,7 @@
 
                 <div class="card-actions">
 
-                  <span class="badge">Advanced</span>
+                  <span class="badge">Передовой</span>
 
                   <button class="whishlist-btn" aria-label="Add to whishlist" data-whish-btn>
                     <ion-icon name="heart"></ion-icon>
@@ -622,19 +621,19 @@
                     <li class="card-meta-item">
                       <ion-icon name="reader-outline" aria-hidden="true"></ion-icon>
 
-                      <span class="card-meta-text">36 Lessons</span>
+                      <span class="card-meta-text">36 уроков</span>
                     </li>
 
                     <li class="card-meta-item">
                       <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
 
-                      <time datetime="PT18H15M44S" class="card-meta-text">18h 15m 44s</time>
+                      <time datetime="PT18H15M44S" class="card-meta-text">18ч 15м 44с</time>
                     </li>
 
                   </ul>
 
                   <h3 class="h3">
-                    <a href="#" class="card-title">Fizika</a>
+                    <a href="#" class="card-title">Физика</a>
                   </h3>
 
                   <div class="rating-wrapper">
@@ -647,22 +646,22 @@
                       <ion-icon name="star"></ion-icon>
                     </div>
 
-                    <span class="rating-text">(18 Review)</span>
+                    <span class="rating-text">(18 обзоров)</span>
 
                   </div>
 
                   <div class="card-footer">
 
                     <div class="card-price">
-                      <span class="span">250 ming sum</span>
+                      <span class="span">250 UZS</span>
 
-                      <del class="del">350 ming sum</del>
+                      <del class="del">350 UZS</del>
                     </div>
 
                     <div class="card-meta-item">
                       <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
 
-                      <span class="card-meta-text">91 Students</span>
+                      <span class="card-meta-text">91 студент</span>
                     </div>
 
                   </div>
@@ -695,18 +694,18 @@
 
           <div class="cta-content">
 
-            <p class="section-subtitle">Free Workshop</p>
+            <p class="section-subtitle">Бесплатный мастер-класс</p>
 
-            <h2 class="h2 section-title">Join Our Free Workshops</h2>
+            <h2 class="h2 section-title">Присоединяйтесь к нашим бесплатным семинарам</h2>
 
             <p class="section-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit amet, consect adipi scing elit, sed do
-              eiusmod tempor
-              incididunt ut sed do eiusmod tempor incididunt ut labore et dolore aliqua.
+              Клиент очень важен, за клиентом пойдет клиент. Пусть это будет много, следствие жирного приставания разработчика, но я делаю
+              в то же время
+              они случаются со мной, но случаются и в такое время, как бы при каком-то труде и боли.
             </p>
 
             <a href="#" class="btn btn-secondary">
-              <span class="span">Upcomming Workshop</span>
+              <span class="span">Предстоящий семинар</span>
 
               <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
             </a>
@@ -727,9 +726,9 @@
       <section class="section event" id="event" aria-label="event">
         <div class="container">
 
-          <p class="section-subtitle">Upcomming Event</p>
+          <p class="section-subtitle">Предстоящее событие</p>
 
-          <h2 class="h2 section-title">Let’s Join Our Community</h2>
+          <h2 class="h2 section-title">Давайте присоединимся к нашему сообществу</h2>
 
           <ul class="grid-list">
 
@@ -741,22 +740,22 @@
                     alt="Innovation & Technological Entrepreneurship Team" class="img-cover">
                 </figure>
 
-                <time class="badge" datetime="2022-12-04">04 Dec 2024</time>
+                <time class="badge" datetime="2022-12-04">04 дек 2024</time>
 
                 <div class="card-content">
 
                   <address class="card-address">
                     <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
 
-                    <span class="span">Alpaca Way Anaheim, CA 92805</span>
+                    <span class="span">Альпака Уэй Анахайм, Калифорния 92805</span>
                   </address>
 
                   <h3 class="h3">
-                    <a href="#" class="card-title">Innovation & Technological Entrepreneurship Team</a>
+                    <a href="#" class="card-title">Команда инновационного и технологического </a>
                   </h3>
 
                   <a href="#" class="btn-link">
-                    <span class="span">Get Ticket</span>
+                    <span class="span">Получить билет</span>
 
                     <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
                   </a>
@@ -774,22 +773,22 @@
                     alt="Virtual Spring Part-time Jobs Fair for Student" class="img-cover">
                 </figure>
 
-                <time class="badge" datetime="2022-10-30">30th Oct 2024</time>
+                <time class="badge" datetime="2022-10-30">30 Окт 2024</time>
 
                 <div class="card-content">
 
                   <address class="card-address">
                     <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
 
-                    <span class="span">Ritter Avenue Detroit, MI 48226</span>
+                    <span class="span">Риттер-авеню Детройт, Мичиган 48226</span>
                   </address>
 
                   <h3 class="h3">
-                    <a href="#" class="card-title">Virtual Spring Part-time Jobs Fair for Student</a>
+                    <a href="#" class="card-title">VВиртуальная весенняя ярмарка вакансий для студентов на неполный</a>
                   </h3>
 
                   <a href="#" class="btn-link">
-                    <span class="span">Get Ticket</span>
+                    <span class="span">Получить билет</span>
 
                     <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
                   </a>
@@ -807,22 +806,22 @@
                     alt="Explorations of Regional Chief Executive Network" class="img-cover">
                 </figure>
 
-                <time class="badge" datetime="2022-09-18">18th Sep 2024</time>
+                <time class="badge" datetime="2022-09-18">18 Сен 2024</time>
 
                 <div class="card-content">
 
                   <address class="card-address">
                     <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
 
-                    <span class="span">Stout Street York, PA 17401</span>
+                    <span class="span">Стаут-стрит, Йорк, Пенсильвания 17401</span>
                   </address>
 
                   <h3 class="h3">
-                    <a href="#" class="card-title">Explorations of Regional Chief Executive Network</a>
+                    <a href="#" class="card-title">Исследования сети региональных руководителей</a>
                   </h3>
 
                   <a href="#" class="btn-link">
-                    <span class="span">Get Ticket</span>
+                    <span class="span">Получить билет</span>
 
                     <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
                   </a>
@@ -859,9 +858,9 @@
           <a href="#" class="logo">EduHome</a>
 
           <p class="section-text">
-            It is a long established fact that a reader will be distracted by the readable content of a page when
-            looking at its
-            layout. The point of using Lorem Ipsum.
+            Давно установленный факт, что читатель будет отвлекаться на читаемое содержание страницы, когда
+            глядя на его
+            макет. Смысл использования Lorem Ipsum.
           </p>
 
           <ul class="social-list">
@@ -897,14 +896,14 @@
         <ul class="footer-list">
 
           <li>
-            <p class="footer-list-title">Explore</p>
+            <p class="footer-list-title">Исследовать</p>
           </li>
 
           <li>
             <a href="#" class="footer-link">
               <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
 
-              <span class="span">About Us</span>
+              <span class="span">О нас</span>
             </a>
           </li>
 
@@ -912,7 +911,7 @@
             <a href="#" class="footer-link">
               <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
 
-              <span class="span">Upcoming Events</span>
+              <span class="span">Предстоящие События</span>
             </a>
           </li>
 
@@ -920,7 +919,7 @@
             <a href="#" class="footer-link">
               <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
 
-              <span class="span">Blog & News</span>
+              <span class="span">Блог и новости</span>
             </a>
           </li>
 
@@ -928,7 +927,7 @@
             <a href="#" class="footer-link">
               <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
 
-              <span class="span">FAQ Question</span>
+              <span class="span">Часто задаваемые вопросы Вопрос</span>
             </a>
           </li>
 
@@ -936,7 +935,7 @@
             <a href="#" class="footer-link">
               <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
 
-              <span class="span">Testimonial</span>
+              <span class="span">Отзыв</span>
             </a>
           </li>
 
@@ -944,7 +943,7 @@
             <a href="#" class="footer-link">
               <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
 
-              <span class="span">Privacy Policy</span>
+              <span class="span">Политика конфиденциальности</span>
             </a>
           </li>
 
@@ -953,14 +952,14 @@
         <ul class="footer-list">
 
           <li>
-            <p class="footer-list-title">Contact Info</p>
+            <p class="footer-list-title">Контактная информация</p>
           </li>
 
           <li class="footer-item">
             <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
 
             <address class="footer-link">
-              URGANCH CITY
+              УРГАНЧ 
             </address>
           </li>
 
@@ -988,7 +987,7 @@
 
       <div class="footer-bottom">
         <p class="copyright">
-          Copyright 2024 EduHome. All Rights Reserved by <a href="#" class="copyright-link">codewithsadee</a>
+          Авторские права EduHome, 2024 г. Все права защищены<a href="#" class="copyright-link">код ссади</a>
         </p>
       </div>
 

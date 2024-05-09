@@ -1,10 +1,10 @@
 from django.shortcuts import render,redirect
 from django.views.generic import View
-from .forms import LoginForm,AddPupilForm,AddTeacherForm,NewGroupForm
+from .forms import LoginForm,AddPupilForm,AddTeacherForm,NewGroupForm,OpenGroupForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import login,logout
-from .models import Uquvchilar,Kurslar,Uqituvchilar,guruh,kunlar,guruh_kunlari,Dars_xonalari
+from .models import Uquvchilar,Kurslar,Uqituvchilar,guruh,kunlar,guruh_kunlari,Dars_xonalari,Vaqtlar
 # Create your views here.
 
 class MainView(View):
@@ -92,11 +92,10 @@ class UquvchiKurslariView(LoginRequiredMixin,View):
 class NewGroupView(LoginRequiredMixin,View):
     def get(self,request):
         group=NewGroupForm()
-        return render(request, 'admin_services/yangi_guruh.html',{'group':group})
+        return render(request, 'admin_services/guruh_shakllantirish.html',{'group':group})
     
     def post(self, request):
         user = NewGroupForm(data=request.POST)
-        print(user)
         if user.is_valid():
             user.save()
             return redirect("add_pupil")
@@ -104,40 +103,45 @@ class NewGroupView(LoginRequiredMixin,View):
         else:
             return render(request, "admin_services/yangi_guruh.html", {'group':user})
         
+class OpenGroupView(LoginRequiredMixin,View):
+    def get(self,request):
+        form=OpenGroupForm()
+        return render(request,'admin_services/opengroup.html',{'form':form})
+        
+        
+    def post(self,request):
+        form=OpenGroupForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('opengroup')
+        else:
+            return redirect('opengroup',{'message':"Xatolik yuz berdi"})
+        
 class ManitoringView(LoginRequiredMixin,View):
     def get(self,request):
-        mat=[]
-        Dars_xonalari_s=Dars_xonalari.objects.all()
-        for i in Dars_xonalari_s:
-            xona=[{'xona_r_k':[i.xona_raqami,'Dushanba','Seshanba','Chorshanba','Payshanba','Juma','Shanba','Yakshanba']}]
-            xonadagi_guruhlar=guruh.objects.filter(xona_id=i.id) 
-            for j in xonadagi_guruhlar:
-                guruhlar=guruh_kunlari.objects.filter(guruh_id=j.id)
-                for p in guruhlar: 
-                    kunlar_hammasi=kunlar.objects.filter(id=p.kun_id.id)
-                    for jj in kunlar_hammasi:
-                        xona.append({'moslash':{'guruh_nomi':p.guruh_id.guruh,'kun_nomi':jj.nomi,'guruh_vaqti':p.guruh_id.vaqt_start,'guruh_vaqti_tugashi':p.guruh_id.vaqt_end}})
-            mat.append(xona)
-        matritsa = []
-        for k in mat:
-            row = []
-            for i in range(1, 8):
-                if len(k) > 0 and 'xona_r_k' in k[0]:
-                    xona_raqami = k[0]['xona_r_k'][0]
-                    kun = k[0]['xona_r_k'][i]
-                    time = None
-                    end_time=None
-                    guruh_raqami = None
-                    for obj in k:
-                        if 'moslash' in obj and obj['moslash']['kun_nomi'] == kun:
-                            time = obj['moslash']['guruh_vaqti']
-                            end_time=obj['moslash']['guruh_vaqti_tugashi']
-                            guruh_raqami = obj['moslash']['guruh_nomi']
-                            break
-                    row.append({'xona': xona_raqami, 'kun': kun, 'vaqt': time, 'end_vaqt':end_time, 'guruh': guruh_raqami})
-                else:
-                    row.append(None)
-            matritsa.append(row)
-        return render(request,"admin_services/manitoring.html",{'matritsa':matritsa})
+        xonalar=Dars_xonalari.objects.all()
+        return render(request,"admin_services/manitoring.html",{'xonalar':xonalar})
+
+class RoomView(LoginRequiredMixin,View):
+    def get(self,request,xona_raqami=101):
+        hafta = kunlar.objects.all()
+        soatlar = Vaqtlar.objects.all()
+        guruhlar = guruh_kunlari.objects.filter(xona_id__xona_raqami=xona_raqami)
+        malumot=[]
+        for i  in hafta:
+            a=[]
+            for j in soatlar:
+                f=True
+                h=0
+                for k in guruhlar:
+                    if i.nomi == k.kun_id.nomi and j.vaqt_start == k.vaqt_id.vaqt_start:
+                        f=False
+                        h+=1
+                        if h==1:
+                            a.append({'guruh':k.guruh_id.guruh,'vaqt_start':k.vaqt_id.vaqt_start,'kun':k.kun_id.nomi})
+                if f:
+                    a.append({'guruh':None,'vaqt_start':j.vaqt_start,'kun':i.nomi})
+            malumot.append({'hafta_kuni':a})
+        return render(request,"admin_services/room.html",{'hafta':hafta,'soatlar':soatlar,'guruhlar':guruhlar,'malumot':malumot})
 
 

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Uquvchilar,Uqituvchilar,guruh
+from .models import Uquvchilar,Uqituvchilar,guruh,guruh_kunlari
 
 class LoginForm(forms.Form):
     username=forms.CharField(max_length=150)
@@ -10,10 +10,10 @@ class AddPupilForm(forms.ModelForm):
         model=Uquvchilar    
         fields=['ism','familiya','t_sana','tel_raqam']
         labels = {
-            'ism': 'Ismi',
-            'familiya': 'Familiyasi:',
-            't_sana':"Tug'ilgan sana:",
-            'tel_raqam': 'Telefon raqam:',
+            'ism': 'Имя:',
+            'familiya': 'Фамилия:',
+            't_sana':"Дата рождения:",
+            'tel_raqam': 'Номер телефона:',
         }
         
 class AddTeacherForm(forms.ModelForm):
@@ -21,22 +21,30 @@ class AddTeacherForm(forms.ModelForm):
         model=Uqituvchilar
         fields=['ism','familiya','yunalishi','tel_raqam']
         labels = {
-            'ism': 'Ismi',
-            'familiya': 'Familiyasi:',
-            'yunalishi':"Mutaxasisligi:",
-            'tel_raqam': 'Telefon raqam:',
+            'ism': 'Имя:',
+            'familiya': 'Фамилия:',
+            'yunalishi':"Специальность:",
+            'tel_raqam': 'Номер телефона:',
         }
         
 class NewGroupForm(forms.ModelForm):
     class Meta:
         model=guruh
-        fields=['guruh','uquvchi_id','kurs_id','uqituvchi_id','vaqt_start','vaqt_end','xona_id']
+        fields=['guruh','uquvchi_id','kurs_id','uqituvchi_id']
         labels={
-            'guruh':'Guruhni kiriting',
-            'uquvchi_id':'Uquvchini kiriting',
-            'kurs_id':'Kursni tanlang',
-            'uqituvchi_id':'Uqituvchini tanlang',
-            'vaqt_start':'Boshlanish vaqtni kiriting',
-            'vaqt_end':'Tugash vaqtini kiriting',
-            'xona_id':'Xonani tanlang'
+            'guruh':'Введите номера группы:',
+            'uquvchi_id':'Выберите студента:',
+            'kurs_id':'Выберите курс:',
+            'uqituvchi_id':'Выберите учителья:',
+        }
+        
+class OpenGroupForm(forms.ModelForm):
+    class Meta:
+        model=guruh_kunlari
+        fields=['guruh_id','kun_id','vaqt_id','xona_id']
+        labels={
+            'guruh_id':'Выберите группу:',
+            'kun_id':'Выберите день:',
+            'vaqt_id':'Выберите время:',
+            'xona_id':'Выберите номер:',
         }

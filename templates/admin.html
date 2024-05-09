@@ -8,7 +8,7 @@
 
    
 
-    <title>FOR ADMIN</title>
+    <title>ДЛЯ АДМИНА</title>
 </head>
 <body style="background-image: url(../static/images/3d-background-with-flowing-dots.jpg); background-size: cover;">
   <script>
@@ -31,6 +31,8 @@
       case '5':
         window.location.href="{% url 'manitoring'%}"
         break;
+      case '6':
+        window.location.href="{% url 'opengroup' %}"
       // Qolgan tanlovlar uchun kerakli URL-lar
     }
   }
@@ -40,15 +42,16 @@
 height: 100%; width: 100%; 
 top: 0;
 left: 0; ">
-    <h2 style="color: white; text-align: center; text-transform: uppercase; ">xush kelibsiz {{user.username}} nima qilishni istaysiz</h2>
+    <h2 style="color: white; text-align: center; text-transform: uppercase; ">добро пожаловать {{user.username}}, что вы хотите сделать?</h2>
 
     <select id="service-select" class="form-select form-select-lg mb-3 container" aria-label="Large select example" onchange="redirectToUrl()">
-      <option selected>Xizmatlarni tanlang</option>
-      <option value="1">O`quvchi qo`shish</option>
-      <option value="2">O`qituvchi qo`shish</option>
-      <option value="3">O`quvchi kurslarini ko`rish</option>
-      <option value="4">Yangi guruh ochish</option>
-      <option value="5">Xonalar manitoringi</option>
+      <option selected>Выберите услуги</option>
+      <option value="1">Добавить студента</option>
+      <option value="2">Добавить учителя</option>
+      <option value="3">Посмотреть студенческие курсы</option>
+      <option value="4">Формирование группы</option>
+      <option value="5">Комнатный монитор</option>
+      <option value="6">Открыть группу</option>
     </select>
 
 
