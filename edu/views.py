@@ -74,7 +74,7 @@ class UquvchiQushView(LoginRequiredMixin,View):
 
 class UquvchiKurslariView(LoginRequiredMixin,View):
     def get(self, request):
-        name = request.GET.get('q','')
+        name = request.GET.get('q','').strip()
         kurslar = Kurslar.objects.all()
         u = Uquvchilar.objects.filter(ism__icontains=name).values('id')
         if name:
