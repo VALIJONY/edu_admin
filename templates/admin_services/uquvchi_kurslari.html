@@ -25,18 +25,20 @@
     
           <thead>
             <tr>
+              <th style="padding-left: 30px;">Группа номер</th>
               <th>Имя</th>
-              <th>Цена</th>
-              <th>Продолжительность</th>
+              <th>КУРСЫ</th>
+              <th>УЧИТЕЛЯ</th>
             </tr>
           </thead>
     
           <tbody>
             {% for i in kurslar%}
             <tr>
-              <td>{{i.kurs_nomi}}</td>
-              <td>{{i.narxi}}</td>
-              <td>{{i.davomiyligi}}</td>
+              <td style="padding-left: 70px;">{{i.guruh}}</td>
+              <td>{{i.uquvchi_id.ism}} {{i.uquvchi_id.familiya}}</td>
+              <td>{{i.kurs_id.kurs_nomi}}</td>
+              <td>{{i.uqituvchi_id.ism}} {{i.uqituvchi_id.familiya}}</td>
             </tr>
             {%endfor%}
           </tbody>

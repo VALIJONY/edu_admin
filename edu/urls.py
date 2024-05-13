@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import MainView,AdminView,LoginView,LogoutView,UqituvchiQushishView,UquvchiQushView,UquvchiKurslariView,NewGroupView,ManitoringView,OpenGroupView,RoomView
+from .views import MainView,AdminView,LoginView,LogoutView,UqituvchiQushishView,UquvchiQushView,UquvchiKurslariView,NewGroupView,ManitoringView,OpenGroupView,RoomView,ListPupilView,DeleteListPupilView
 
 urlpatterns=[
 path('',MainView.as_view(),name='main') ,
@@ -13,5 +13,6 @@ path('new_group/',NewGroupView.as_view(),name='new_group'),
 path('manitoring/',ManitoringView.as_view(),name='manitoring'),
 path('opengroup/',OpenGroupView.as_view(),name='opengroup'),
 path('room_manitoring/<xona_raqami>',RoomView.as_view(),name='room'),
-
+path('listpupil/',ListPupilView.as_view(),name='list'),
+path('delete/<id>/',DeleteListPupilView.as_view(),name='delete')
 ]

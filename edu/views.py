@@ -75,19 +75,12 @@ class UquvchiQushView(LoginRequiredMixin,View):
 class UquvchiKurslariView(LoginRequiredMixin,View):
     def get(self, request):
         name = request.GET.get('q','').strip()
-        kurslar = Kurslar.objects.all()
-        u = Uquvchilar.objects.filter(ism__icontains=name).values('id')
+        uquvchilar=guruh.objects.all()
+        u = guruh.objects.filter(uquvchi_id__ism__icontains=name)
         if name:
-            try:
-                courses = guruh.objects.filter(uquvchi_id=u[0]['id'])
-                if courses:
-                    print(courses.values())
-                    kurslar = Kurslar.objects.filter(id__in=[ i.kurs_id_id for i in courses])
-                    print(kurslar)
-            except:
-                pass
-
-        return render(request, 'admin_services/uquvchi_kurslari.html', {'kurslar': kurslar,'name':name})
+            return render(request, 'admin_services/uquvchi_kurslari.html', {'kurslar': u,'name':name})
+        else:
+            return render(request, 'admin_services/uquvchi_kurslari.html', {'kurslar': uquvchilar,'name':name})
 
 class NewGroupView(LoginRequiredMixin,View):
     def get(self,request):
@@ -144,4 +137,21 @@ class RoomView(LoginRequiredMixin,View):
             malumot.append({'hafta_kuni':a})
         return render(request,"admin_services/room.html",{'hafta':hafta,'soatlar':soatlar,'guruhlar':guruhlar,'malumot':malumot})
 
+class ListPupilView(LoginRequiredMixin,View):
+    def get(self,request):
+        list=guruh.objects.all().order_by('guruh')
+        a=[]
+        a.append(list[0])
+        b=[]
+        for i in list:
+            for j in a:
+                if j.guruh != i.guruh and (i.guruh not in b):
+                    a.append(i)
+                    b.append(i.guruh)
+        return render(request,'admin_services/uquvchilar_ruyxati.html',{'list':list,'count':a})
 
+class DeleteListPupilView(LoginRequiredMixin,View):
+    def get(self,request,id):
+        list=guruh.objects.filter(id=id)
+        list.delete()
+        return redirect('list')

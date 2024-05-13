@@ -33,8 +33,10 @@
         break;
       case '6':
         window.location.href="{% url 'opengroup' %}"
-      // Qolgan tanlovlar uchun kerakli URL-lar
-    }
+        break;
+      case '7':
+        window.location.href="{% url 'list'%}"
+      }
   }
 </script>
 
@@ -52,6 +54,7 @@ left: 0; ">
       <option value="4">Формирование группы</option>
       <option value="5">Комнатный мониторинг</option>
       <option value="6">Открыть группу</option>
+      <option value="7">Список студентов</option>
     </select>
 
 
